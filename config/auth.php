@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Students;
+use App\Models\ProductAuth;
 
 return [
 
@@ -48,6 +50,15 @@ return [
         'driver' => 'session',
         'provider' => 'admins',
     ],
+'student' => [
+    'driver' => 'session',
+    'provider' => 'students',
+],
+
+ 'product' => [
+        'driver' => 'session',
+        'provider' => 'products',
+    ],
    
 
 ],
@@ -78,6 +89,14 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', Admin::class),
         ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => Students::class,
+        ],
+            'products' => [
+        'driver' => 'eloquent',
+        'model' => ProductAuth::class,
+    ],
 
         // 'users' => [
         //     'driver' => 'database',
